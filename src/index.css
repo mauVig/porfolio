@@ -1,0 +1,530 @@
+:root{
+    --negro:#282828;
+    --gris:#E3E3E3;
+    --crema:#FCDDB8;
+    --secPad:20vh 0;
+}
+@font-face {
+    font-family:"helvetica";
+    src: url('./sources/Helvetica.ttf');
+}
+*{
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    width: 15px;
+}
+body {
+    font-family:"helvetica", sans-serif;
+    position: relative;
+}
+body::-webkit-scrollbar-track {
+    background: var(--negro);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--crema) ;
+    border-radius: 6px;
+    border: 3px solid var(--negro);
+}
+.wallBlack{
+    position: absolute;
+    inset:0;
+    background:var(--negro);
+    z-index:9999999;
+}
+img{
+    max-width:100%;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/* header */
+header{
+    background: var(--negro);
+    color: var(--gris);
+    padding: var(--secPad);
+    position: relative;
+}
+header h2{
+    margin-left: -3px;
+    font-size: 3.6rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+}
+header p{
+    display: block;
+    width:400px;
+    letter-spacing:1.8px;
+    font-weight: bold;
+}
+.presentation{
+    font-size: 1.3rem;
+}
+header h2::first-letter,
+header .developer::first-letter{
+    color:var(--crema);
+}
+header strong{
+    color:var(--crema);
+}
+header img{
+    pointer-events: none;
+}
+.button{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.buttonSub,
+.buttonAnser{
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+}
+.buttonSub button{
+    margin-top: 3rem;
+    border:0 !important;
+}
+.buttonAnser{
+    margin:var(--secPad)
+}
+.buttonSub button,
+.buttonAnser a,
+.button a{
+    padding: .8rem 1rem;
+    border-radius: 40px;
+    min-width: 190px;
+    background:var(--crema);
+    display: block;
+    text-align: center;
+    color:var(--negro);
+    font-weight: bold;
+    transition: .5s;
+}
+.buttonAnser a:hover,
+.buttonSub button:hover,
+.button a:hover{
+    letter-spacing: 2px;
+    transition: .5s;
+    background: #e9c79d;
+}
+.buttonSub button:active,
+.button a:active{
+    background: #7e684e;
+}
+.cv{
+    background:#fff !important;
+    margin-left: 1rem;
+}
+.redes{
+    margin-left: -1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+
+}
+.redes svg{
+    color:var(--gris);
+    width: 26px;
+    height: 100%;
+    fill: var(--crema);
+    transition: .5s;
+}
+.redes a:hover svg {
+    transform: translateY(-10px);
+    transition: .5s;
+}
+.redes a{
+    padding: 1rem;
+}
+
+header h1{
+    visibility: hidden;
+    position: absolute;
+    left:-200vw;
+}
+.headerTop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo{
+    width:100px;
+}
+
+.topCont{
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* header */
+
+/* skills */
+
+
+.skills{
+    /* background: url("./../img/cafe-fondo-02.png") right bottom no-repeat; */
+    background: url("./assets/cafe-fondo-02.png") right bottom no-repeat;
+    position: relative;
+    padding:var(--secPad);
+    min-height: 90vh;
+}
+.skills::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 6vw;
+    background: var(--crema);
+}
+
+.skills h2{
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+.contTech h3{
+    font-size:1.3rem;
+}
+.contTech{
+    display: flex;
+    justify-content: start;
+    align-items:center;
+    flex-wrap: wrap;
+    width: 600px;
+}
+.contTech>div{
+    display: flex;
+    align-items:center;
+    width: 300px;
+    margin-top: 2rem;
+}
+.contSvg{
+    padding-bottom: 11px;
+    padding-right: .9rem;
+}
+
+.contTech svg{
+    width:27px;
+    height:27px;
+
+}
+
+
+/* skills */
+
+/* jobs */
+.jobs{
+    padding:var(--secPad);
+    background:var(--negro);   
+    color:#ffff; 
+    letter-spacing: 1px;;
+}
+.jobs h2{
+    color:var(--crema);
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.jobsText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.jobsText > div {
+    width: 70%;
+}
+
+.foto{
+    position: relative;
+}
+.foto::before{
+    content: '';
+    position: absolute;
+    inset:0;
+    background:rgb(0, 0, 0);
+    opacity:0;
+    transition: all .4s ease-out;
+    z-index: 200;
+    transition: .5s;
+    
+}
+.fotoIn{
+    z-index: 300;
+    position: absolute;
+    inset:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--negro);
+    opacity:0;    
+    transition: .5s;
+}
+.foto:hover::before{
+    opacity:.8;
+    transition: .5s;    
+}
+
+.fotoIn:hover{
+    opacity:1;
+    transition: .5s;
+    transform: scale(1.3);
+    
+}
+.fotoIn>div{
+    padding:2rem;
+    padding: .8rem 1rem;
+    border-radius: 40px;
+    background:var(--crema);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+
+}
+.fotoIn > div span:nth-child(1){
+    opacity:0;
+    transition: .5s;
+}
+.fotoIn > div span:nth-child(2){
+    opacity:0;
+    transform: translateY(15px);
+    transition: .5s;
+
+}
+.fotoIn > div span:nth-child(3){
+    opacity:0;
+    transform: translateY(-15px);
+    transition: .5s;
+
+}
+.fotoIn:hover > div span:nth-child(1){
+    opacity:1;
+    transform: translateY(0);
+    transition: .5s;
+    
+}
+.fotoIn:hover > div span:nth-child(2){
+    opacity:1;
+    transform: translateY(0);
+    transition: .5s;
+    transition-delay: .4s;    
+
+}
+.fotoIn:hover > div span:nth-child(3){
+    opacity:1;
+    transform: translateY(0);
+    transition: .5s;
+    transition-delay: .8s;    
+
+}
+/* jobs */
+/* sentece */
+.toll{
+    height: 100vh;
+}
+.contJarallax{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+:root{
+    --contJarallax-w:50px;
+}
+.contJarallax::before{
+    content:'';
+    position: absolute;
+    width:1px;
+    height: var(--contJarallax-w);
+    left:calc(50%-1px);
+    top:80%;
+    background: #000;
+    
+}
+.contJarallax::after{
+    content:'';
+    position: absolute;
+    width:1px;
+    height: var(--contJarallax-w);
+    left:calc(50%-1px);
+    bottom: 80%;
+    background: #000;
+    
+}
+.sentece{
+    text-align: center;
+    padding:var(--secPad);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: -1000;
+}
+
+.sentece div{
+    width: 80%;
+}
+.sentece div p:nth-child(1){
+    font-size: 2rem;
+    line-height: 38px;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+.sentece div p:nth-child(2){
+    font-size:1.3rem;
+    font-style: italic;
+}
+
+/* sentece */
+
+/* contact */
+.contact{
+    text-align: center;
+    background: var(--negro);
+    padding:var(--secPad);
+    color:var(--gris)
+}
+.contact form div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.contact label{
+    margin-top: 1rem;
+    font-size:.8rem;
+}
+.contact textarea,
+.contact input{
+    width: 100%;
+    background: #6D6D6D;
+    border:0;
+    padding:.8rem;
+    color:var(--gris);
+}
+.contact textarea{
+    min-height: 200px;
+    max-height: 200px;
+}
+.gracias{
+    letter-spacing:2px;
+}
+/* contact */
+
+/* footer */
+
+footer{
+    background:var(--crema);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer svg{
+    width: 30px;
+}
+footer .container div:nth-child(1) {
+    width: 300px;
+}
+.footerRedes{
+    padding: 3rem ;
+
+}
+
+/* footer */
+
+@media (max-width:1200px) {
+    .skills{
+        /* background: url("./../img/cafe-fondo-02-tablet.png") right bottom no-repeat; */
+        background: url("./assets/cafe-fondo-02-tablet.png") right bottom no-repeat;
+    }
+}
+@media (max-width:991px) {
+    header img{
+        margin-bottom: 3rem;        
+    }
+    .fotoDante{
+        margin-top: 3rem;
+    }
+    .jobs img:nth-child(2){
+        margin-bottom: 3rem;
+    }
+    .sentece div p:nth-child(1){
+        font-size: 1.6rem;
+    }
+    footer span{
+        font-size: .9rem;
+    }
+}    
+@media (max-width:800px) {
+    .skills{
+        background: url("./assets/cafe-fondo-02-cel.png") right bottom no-repeat;
+    }
+    .contTech{
+        width: 400px;
+    }
+    .contTech>div{
+        width: 50%;
+    }
+}
+
+@media (max-width:600px) {
+    .sentece div p:nth-child(1){
+        font-size:1.4rem;
+    }
+}
+@media (max-width:500px) {
+    .contTech{
+        width: 100%;
+    }
+    .contTech>div{
+        width: 100%;
+    }
+    .button{
+        flex-direction: column;
+    }
+    .cv{
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+    .button a{
+        width: 90%;
+    }
+    header p{
+        width:auto;
+    }
+    footer{
+        text-align: center;
+    }
+    .contJarallax::before{ 
+        top:90%;
+    }
+    .contJarallax::after{
+        bottom: 90%;
+    }
+    .sentece div {
+        width: 95%;
+    }
+    .footerRedes{
+        padding: 1rem;
+    }
+    footer span{
+        font-size: .8rem;
+    }
+}
