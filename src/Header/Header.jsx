@@ -6,19 +6,8 @@ import { contextL } from './../contextLenguaje'
 
 
 const Header = () => {
-  const { choose, idiom } = useContext( contextL )
+  const { idiom } = useContext( contextL )
   const [ textIdiom, setTextIdiom ] = useState(false)
-
-  useEffect(()=>{
-    setTextIdiom( choose() )
-    console.log(idiom,'---idiomH');
-  },[textIdiom])
-  
-// HERE !! 
-
-
-
-
   const fullName = useRef()
   const dev = useRef()
   const h1  = useRef()
@@ -35,24 +24,24 @@ const Header = () => {
     scale: .5,
   }
   useEffect(()=>{  
-    // scrollReveal().reveal(fullName.current,{
-    //   delay:2500,
-    //   reset:false
-    // })
-    // scrollReveal().reveal(foto.current,{
-    //   delay:100,
-    //   reset:false,
-    //   duration: 7000
-    // });
-    // scrollReveal().reveal( dev.current, textStart )
-    // scrollReveal().reveal( h1.current, textStart )
-    // scrollReveal().reveal( pas.current, textStart )
-    // scrollReveal().reveal( cuento.current, textStart )
-    // scrollReveal().reveal( headerRedes.current, textStart )
-    // scrollReveal().reveal( buttons.current, textStart )
-    // scrollReveal().reveal( textStart2.current, { ...textStart, delay:5000 })
+    scrollReveal().reveal(fullName.current,{
+      delay:2500,
+      reset:false
+    })
+    scrollReveal().reveal(foto.current,{
+      delay:100,
+      reset:false,
+      duration: 7000
+    });
+    scrollReveal().reveal( dev.current, textStart )
+    scrollReveal().reveal( h1.current, textStart )
+    scrollReveal().reveal( pas.current, textStart )
+    scrollReveal().reveal( cuento.current, textStart )
+    scrollReveal().reveal( headerRedes.current, textStart )
+    scrollReveal().reveal( buttons.current, textStart )
+    scrollReveal().reveal( textStart2.current, { ...textStart, delay:5000 })
   },[])
-
+ 
 
   return ( 
     <>
@@ -66,11 +55,11 @@ const Header = () => {
                 <h1>Mauro Vigliero desarrollador frond-end y back-end. Full-Stack</h1>
                 <div>
                   <main>
-                    <p className="developer" ref={ dev }>{ textIdiom ? 'Desarrollador' : 'Developer'}</p>
+                    <p className="developer" ref={ dev }>{ idiom ? 'Desarrollador' : 'Developer'}</p>
                     <h2 ref={ h1 }>Full-Stack</h2>
-                    <p className="presentation" ref={ fullName } >Soy <strong >Mauro Vigliero.</strong></p>
-                    <p className="presentation" ref={ pas }> Me apasiona programar.</p>
-                    <p className="presentation" ref={ cuento }> Cuento con amplio conocimiento para desarrollar <strong ref={ textStart2 }>Sitios Web y APPs</strong>.</p>
+                    <p className="presentation" ref={ fullName } >{ idiom ? `Soy` : `My name is`}  <strong >Mauro Vigliero.</strong></p>
+                    <p className="presentation" ref={ pas }>{ idiom ? 'Me apasiona programar.' : 'I am passionate about programming.'} </p>
+                    <p className="presentation" ref={ cuento }> { idiom ? 'Cuento con amplio conocimiento para desarrollar' : 'I have extensive knowledge to develop '} <strong ref={ textStart2 }>{ idiom ? 'Sitios Web y APPs' : 'Websites and APPs '}</strong>.</p>
                   </main>
                   <div className="redes" ref={ headerRedes }>
                     <a href="https://www.linkedin.com/in/maurovigliero/" target="_blanck">
@@ -108,14 +97,14 @@ const Header = () => {
                     </a>
                   </div>
                   <div className="button" ref={ buttons }>
-                      <a href="#work">Ver Trabajos</a>
-                      <a href="./sources/Mauro-Vigliero-CV-2022.pdf" className="cv" download>Descargar CV</a>
+                      <a href="#work">{ idiom ? 'Ver Trabajos' : 'See jobs'}</a>
+                      <a href="./sources/Mauro-Vigliero-CV-2022.pdf" className="cv" download>{ idiom ? 'Descargar CV' : 'Download CV'}</a>
                   </div>
                 </div>
             </div>
             <div className="col-12 col-lg-6 order-1">
                 <div className="d-flex justify-content-center">
-                    <img src={ mau } ref={ foto } className="fotoMau" alt="Foto principal de Mauro Vigliero " />
+                    <img src={ mau } ref={ foto } className="fotoMau" alt="Foto principal de Mauro Vigliero" />
                 </div>
             </div>
           </div>

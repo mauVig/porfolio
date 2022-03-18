@@ -1,22 +1,33 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 import logo from './../assets/logo-06.jpg'
 import { contextL } from './../contextLenguaje'
+import scrollReveal from "scrollreveal"
+
 
 
 const HeaderTop = () => {
-  const { choose } = useContext( contextL )
-  const [ idiom, setIdiom ] = useState(false)
+  const cont = useRef()
+  const go = useNavigate()
+  const { idiom } = useContext( contextL )
+  useEffect(()=>{
+    scrollReveal().reveal(cont.current,{
+      delay: 4200,
+      reset: false,
+      duration: 4000
+    });
+  },[])
 
   const handler = () => {    
-    setIdiom( choose() ) 
+    go('/')
   }
 
   return (
     <>
-        <div className="container topCont">
+        <div className="container topCont" ref={ cont }>
             <img src={ logo } className="logo" alt="Logo de Mauro Daniel Vigliero" />
-            <div>
-                <button onClick={ handler }>{ idiom ? 'Enlish':'Español' }</button>
+            <div className="idiom">
+                <button onClick={ handler }>{ idiom ? 'Choose lenguage':'Cambiar idioma' }</button>
             </div>
         </div>
     </>

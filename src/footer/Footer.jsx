@@ -1,7 +1,9 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useContext } from 'react'
 import scrollReveal from "scrollreveal"
+import { contextL } from './../contextLenguaje'
 
 const Footer = () => {
+  const { idiom } = useContext(contextL)
   const red = useRef()
   useEffect(()=>{
     scrollReveal().reveal( red.current ,{
@@ -17,7 +19,7 @@ const Footer = () => {
       <footer>
        <div className="container d-flex justify-content-center align-items-center flex-column">
          <div className="headline">
-            <h3 className="text-center position-absolute visually-hidden">Redes</h3>
+            <h3 className="text-center position-absolute visually-hidden">{ idiom ? 'Redes' : 'social media'}</h3>
             <div className="d-flex justify-content-around align-items-center" ref={ red }>
               <a href="https://www.linkedin.com/in/maurovigliero/" target="_blanck"  className="footerRedes">
                 <svg viewBox="0 0 260.366 260.366">
@@ -55,7 +57,7 @@ const Footer = () => {
             </div>
          </div>
          <div>
-           <span> © Mauro Vigliero - Todos los derechos reservados - 2022 </span>
+           <span> © Mauro Vigliero - { idiom ? 'Todos los derechos reservados' : 'All rights reserved'} - 2022 </span>
          </div>
        </div>     
       </footer>

@@ -5,13 +5,12 @@ export const contextL = createContext()
 export const Lenguage = ({ children }) => {
     const [ idiom, setIdiom ] = useState(false)
 
-    const choose = () => {
-        setIdiom( x => !x)        
-        return idiom
+    const changeLenguage = ( lenguage ) => {
+        setIdiom( lenguage )
     }
 
     return (
-        <contextL.Provider value={{ choose, idiom }}>
+        <contextL.Provider value={{ changeLenguage, idiom }}>
             { children }
         </contextL.Provider>
     )

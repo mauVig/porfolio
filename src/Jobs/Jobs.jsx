@@ -1,22 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import dante from './../assets/page-dante.jpg'
 import sanacion from './../assets/page-sanacion.jpg'
+import { contextL } from './../contextLenguaje.jsx'
+import DanteEspa from './DanteEspa'
+import DanteEngli from './DanteEngli'
+import SanacionEspa from './SanacionEspa'
+import SanacionEngli from './SanacionEngli'
 
 const Jobs = () => {
+  const { idiom } = useContext( contextL )
   return (
     <>
      <section className="jobs" id="work">
-        <h2>MIS TRABAJOS</h2>
+        <h2>{ idiom ? 'MIS TRABAJOS' : 'MY JOBS' }</h2>
         <div className="container">
           <div className="row mt-5"> 
             <div className="col-12 col-lg-6">
               <div className="jobsText">
                 <div>
-                  <p>Web realizada para el músico y productor Dante Bronzini, con el objetivo de poder mostrar a través de la web su música.</p>
-                  <p>La identidad se diseñó en conjunto con Jimena Vigliero.</p>
-                  <p>Utilicé el Framework Bootstrap 5 y dos librerias, Swiper y ScrollReveal.</p>
+                  { idiom ? <DanteEspa/> : <DanteEngli />}
                   <div className="button justify-content-center align-items-center mt-5">
-                    <a href="https://dantebronzini.com.ar" target="_blanck">Visitar web</a>
+                    <a href="https://dantebronzini.com.ar" target="_blanck">{ idiom ? 'Visitar web' : 'Visit website'}</a>
                   </div>
                 </div>
               </div>
@@ -58,11 +62,9 @@ const Jobs = () => {
             <div className="col-12 col-lg-6">
               <div className="jobsText">
                 <div>
-                  <p>Web realizada para promocionar encuentros y retiros grupales.</p>
-                  <p>La identidad se diseñó en conjunto con Jimena Vigliero.</p>
-                  <p>Utilicé el Framework Bootstrap 5 y la libreria Swiper.</p>
+                  { idiom ? <SanacionEspa /> : <SanacionEngli /> }
                   <div className="button justify-content-center align-items-center mt-5">
-                    <a href="https://sanacionancestral.com.ar/" target="_blanck">Visitar web</a>
+                    <a href="https://sanacionancestral.com.ar/" target="_blanck">{ idiom ? 'Visitar web' : 'Visit website'}</a>
                   </div>
                 </div>
               </div>

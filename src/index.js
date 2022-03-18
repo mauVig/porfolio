@@ -5,15 +5,18 @@ import reportWebVitals from './reportWebVitals'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import { ParallaxProvider } from 'react-scroll-parallax'
+import { BrowserRouter } from "react-router-dom";
 import { Lenguage } from './contextLenguaje'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <ParallaxProvider>
-      <Lenguage>
-        <App />
-      </Lenguage>
+        <BrowserRouter>
+          <Lenguage>
+              <App />
+          </Lenguage>
+        </BrowserRouter>
     </ParallaxProvider>
   </React.StrictMode>,
   document.getElementById('root')
